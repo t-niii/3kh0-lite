@@ -99,12 +99,12 @@
         const container = document.getElementById("game-container");
         data.forEach((project) => {
           const game = document.createElement("a");
-          game.href = project.link;
+          game.href = "https://gamesrepo.vercel.app/" + project.root + "/" + project.file;
             game.className = "game-link container";
             game.innerHTML = `
             <div class="game-tile">
-              <img class="game-icon" src="${project.imgSrc}" alt="icon" />
-              <p class="game-title">${project.title}</p>
+              <img class="game-icon" src="https://gamesrepo.vercel.app/${project.root}/${project.img}" alt="icon" />
+              <p class="game-title">${project.name}</p>
               </div>`;
               container.appendChild(game);
           });
@@ -121,12 +121,12 @@
           .filter((game) => game.title.toUpperCase().includes(filter))
           .forEach((project) => {
             const game = document.createElement("a");
-            game.href = project.link;
+            game.href = "https://gamesrepo.vercel.app/" + project.root + "/" + project.file;
             game.className = "game-link container";
             game.innerHTML = `
             <div class="game-tile">
-              <img class="game-icon" src="${project.imgSrc}" alt="icon" loading="lazy" />
-              <p class="game-title">${project.title}</p>
+              <img class="game-icon" src="https://gamesrepo.vercel.app/${project.root}/${project.img}" alt="icon" loading="lazy" />
+              <p class="game-title">${project.name}</p>
               </div>`;
             container.appendChild(game);
           });
